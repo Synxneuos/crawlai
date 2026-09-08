@@ -185,5 +185,62 @@
   </footer>
 
   <script src="app.js"></script>
+
+  <!-- WALLET SELECTION MODAL -->
+  <div class="modal-backdrop" id="wallet-modal-backdrop"></div>
+  <div class="modal-window" id="wallet-modal">
+    <div class="modal-head">
+      <div class="modal-title">⚡ Connect Web3 Wallet</div>
+      <button type="button" class="modal-close" id="modal-close">&times;</button>
+    </div>
+    <p class="modal-sub">Select your Web3 wallet to link with CrawlAI Protocol for epoch yield distributions.</p>
+    <div class="wallet-options">
+      <button type="button" class="wallet-opt" id="opt-phantom">
+        <span class="opt-icon">👻</span>
+        <div class="opt-info">
+          <div class="opt-name">Phantom (Solana)</div>
+          <div class="opt-desc" id="phantom-status">Solana Browser Extension</div>
+        </div>
+        <span class="opt-badge" id="badge-phantom">Detected</span>
+      </button>
+      <button type="button" class="wallet-opt" id="opt-metamask">
+        <span class="opt-icon">🦊</span>
+        <div class="opt-info">
+          <div class="opt-name">MetaMask / Rabby (EVM)</div>
+          <div class="opt-desc" id="metamask-status">Browser Extension</div>
+        </div>
+        <span class="opt-badge" id="badge-metamask">Detected</span>
+      </button>
+      <button type="button" class="wallet-opt" id="opt-solflare">
+        <span class="opt-icon">🔥</span>
+        <div class="opt-info">
+          <div class="opt-name">Solflare (Solana)</div>
+          <div class="opt-desc">Solana Web Wallet</div>
+        </div>
+        <span class="opt-badge">Solana</span>
+      </button>
+    </div>
+    <div class="manual-wallet-section">
+      <div class="manual-label">Or enter wallet address manually:</div>
+      <div class="manual-input-row">
+        <input type="text" id="manual-wallet-input" placeholder="Solana base58 or 0x... address">
+        <button type="button" id="btn-manual-submit">Connect</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT POPOVER -->
+  <div class="account-popover" id="account-popover">
+    <div class="popover-head">
+      <span class="status-dot pulse"></span>
+      <span id="popover-network">Wallet Connected</span>
+    </div>
+    <div class="popover-address" id="popover-addr">...</div>
+    <div class="popover-actions">
+      <button type="button" class="btn-popover-copy" id="btn-popover-copy">📋 Copy</button>
+      <button type="button" class="btn-popover-disconnect" id="btn-popover-disconnect">Disconnect</button>
+    </div>
+  </div>
+
 </body>
 </html>

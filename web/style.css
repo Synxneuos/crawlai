@@ -585,3 +585,181 @@ body {
 
 .footer-links a { color: var(--text-muted); text-decoration: none; }
 .footer-links a:hover { color: var(--gold); }
+
+/* WALLET MODAL & POPOVER STYLES */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 998;
+  display: none;
+}
+.modal-backdrop.active { display: block; }
+
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 440px;
+  background: #0d131a;
+  border: 1px solid var(--border-line);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  padding: 1.75rem;
+  z-index: 999;
+  display: none;
+}
+.modal-window.active { display: block; animation: modalFadeIn 0.2s ease-out; }
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translate(-50%, -46%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.modal-title { font-size: 1.15rem; font-weight: 700; color: #fff; }
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-close:hover { color: #fff; }
+.modal-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+
+.wallet-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.wallet-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+.wallet-opt:hover {
+  background: rgba(245, 197, 66, 0.08);
+  border-color: var(--gold);
+  transform: translateX(3px);
+}
+.opt-icon { font-size: 1.5rem; }
+.opt-info { flex: 1; }
+.opt-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
+.opt-desc { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); }
+.opt-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.manual-wallet-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+.manual-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+.manual-input-row { display: flex; gap: 0.5rem; }
+.manual-input-row input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  outline: none;
+}
+.manual-input-row button {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* POPOVER */
+.account-popover {
+  position: absolute;
+  top: 70px;
+  right: 2rem;
+  background: #0d131a;
+  border: 1px solid var(--border-line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 280px;
+  z-index: 1000;
+  display: none;
+}
+.account-popover.active { display: block; animation: modalFadeIn 0.15s ease-out; }
+
+.popover-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.popover-address {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  word-break: break-all;
+  margin-bottom: 0.75rem;
+}
+.popover-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn-popover-copy, .btn-popover-disconnect {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-popover-copy {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.btn-popover-disconnect {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
