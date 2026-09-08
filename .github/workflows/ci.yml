@@ -1,0 +1,22 @@
+name: CrawlAI CI/CD Protocol Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run Test Suite
+        run: |
+          node tests/test_routing.js
+          node tests/test_proof.js
+          node tests/test_splitter.js

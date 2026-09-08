@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrawlAI Protocol ($CRAWL) • Decentralized AI Web-Grounding Mesh on Solana</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 1. HEADER -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-logo">⚡</div>
+      <div class="brand-text">
+        <span class="brand-title">CRAWL<span class="gold-text">AI</span></span>
+        <span class="brand-sub">SOLANA DEPIN MESH</span>
+      </div>
+    </div>
+
+    <div class="nav-metrics">
+      <div class="metric-pill">
+        <span class="status-dot pulse"></span>
+        <span class="metric-label">NETWORK:</span>
+        <span class="metric-val gold-text" id="header-mesh-status">ONLINE</span>
+      </div>
+      <div class="metric-pill">
+        <span class="metric-label">ACTIVE NODES:</span>
+        <span class="metric-val" id="header-active-nodes">1,482</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <button type="button" class="btn-wallet" id="btn-wallet">
+        <span class="wallet-icon">💳</span>
+        <span id="wallet-label">Connect Phantom</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. TICKER TAPE -->
+  <div class="ticker-wrap">
+    <div class="ticker-content" id="ticker-content">
+      <span>⚡ CRAWL-MESH: EPOCH 1 LIVE</span>
+      <span>•</span>
+      <span>🌐 RESIDENTIAL THROUGHPUT: 48.2 MB/s</span>
+      <span>•</span>
+      <span>💰 TOTAL REVENUE DISTRIBUTED: $184,290 USDC</span>
+      <span>•</span>
+      <span>🔥 RECENT BURN: 45,200 $CRAWL</span>
+      <span>•</span>
+      <span>⚡ ZERO HARDWARE • 1-CLICK PASSIVE YIELD ON SOLANA</span>
+    </div>
+  </div>
+
+  <!-- 3. MAIN TERMINAL DASHBOARD -->
+  <main class="container">
+    <!-- Hero / Node Switch Header -->
+    <div class="hero-card">
+      <div class="hero-left">
+        <div class="badge-tag">REVOLUTIONARY AI DEPIN</div>
+        <h1 class="hero-title">Decentralized Residential <span class="gradient-text">AI Web Grounding</span></h1>
+        <p class="hero-desc">Share 0.3% of your idle internet bandwidth to power real-time web search for autonomous AI models. Earn continuous passive SOL rewards and protocol dividends.</p>
+        
+        <div class="switch-row">
+          <button type="button" class="btn-node-toggle" id="btn-node-toggle">
+            <span class="btn-dot" id="btn-dot"></span>
+            <span id="node-toggle-text">START MINING NODE</span>
+          </button>
+          <div class="node-live-status" id="node-live-status">
+            <span class="status-indicator idle" id="status-indicator"></span>
+            <span id="status-label">Node Status: Standby</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Live Speedometer / Quality Card -->
+        <div class="quality-box">
+          <div class="box-title">RESIDENTIAL CONNECTION SCORE</div>
+          <div class="score-display">
+            <span class="score-num" id="quality-num">98</span>
+            <span class="score-max">/100</span>
+          </div>
+          <div class="quality-label" id="quality-label">🟢 Tier-1 Verified Residential ISP</div>
+          <div class="meta-row">
+            <span>Ping: <strong id="ping-val">18 ms</strong></span>
+            <span>Type: <strong>Dynamic Fiber</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4-GRID ANALYTICS -->
+    <div class="stats-grid">
+      <!-- Card 1: Points & Mining -->
+      <div class="grid-card">
+        <div class="card-head">
+          <span class="card-title">EPOCH MINING REWARDS</span>
+          <span class="badge-gold">DAILY CYCLE</span>
+        </div>
+        <div class="big-metric" id="user-points">0.00</div>
+        <div class="sub-metric">POINTS EARNED (<span class="gold-text" id="pts-rate">+0.0 pts/min</span>)</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 25%;"></div>
+        </div>
+        <div class="meta-split">
+          <span>Est. Value: <strong id="est-sol">0.00 SOL</strong></span>
+          <button type="button" class="btn-claim-mini" id="btn-claim-payout">Claim SOL</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Bandwidth Relayed -->
+      <div class="grid-card">
+        <div class="card-head">
+          <span class="card-title">BANDWIDTH RELAYED</span>
+          <span class="badge-cyan">DATA TUNNEL</span>
+        </div>
+        <div class="big-metric" id="data-relayed">0.00 <span class="unit">MB</span></div>
+        <div class="sub-metric">REAL-TIME SCRAPE TRAFFIC</div>
+        <div class="traffic-meter">
+          <div class="pulse-bar" style="height: 40%;"></div>
+          <div class="pulse-bar" style="height: 70%;"></div>
+          <div class="pulse-bar" style="height: 55%;"></div>
+          <div class="pulse-bar" style="height: 90%;"></div>
+          <div class="pulse-bar" style="height: 65%;"></div>
+        </div>
+        <div class="meta-split">
+          <span>Requests Served: <strong id="req-count">0</strong></span>
+          <span>Security: <strong>Encrypted</strong></span>
+        </div>
+      </div>
+
+      <!-- Card 3: Viral Referral Tree -->
+      <div class="grid-card">
+        <div class="card-head">
+          <span class="card-title">2-TIER REFERRAL ENGINE</span>
+          <span class="badge-green">20% LIFETIME</span>
+        </div>
+        <p class="ref-desc">Invite other miners to earn 20% tier-1 and 10% tier-2 lifetime override on all their points!</p>
+        <div class="ref-box">
+          <input type="text" id="ref-input" readonly value="https://crawlai.mesh/?ref=0xSolanaMaster">
+          <button type="button" class="btn-copy" id="btn-copy-ref">Copy</button>
+        </div>
+        <div class="share-links">
+          <a href="#" class="share-btn twitter" id="share-x" target="_blank">Share on X</a>
+          <a href="#" class="share-btn telegram" id="share-tg" target="_blank">Telegram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. INTERACTIVE LIVE AI CRAWL TESTER (Proof of Concept) -->
+    <div class="crawler-console">
+      <div class="console-head">
+        <div>
+          <h3 class="console-title">⚡ Live Enterprise AI Crawl Terminal</h3>
+          <p class="console-sub">Test how AI models scrape web intelligence through your residential node in real time.</p>
+        </div>
+        <span class="badge-tag">OPENAI & FIRECRAWL COMPATIBLE</span>
+      </div>
+
+      <div class="console-input-row">
+        <input type="url" id="crawl-url-input" class="console-input" placeholder="https://news.ycombinator.com or any target URL..." value="https://news.ycombinator.com">
+        <button type="button" class="btn-execute-crawl" id="btn-execute-crawl">Run Mesh Crawl</button>
+      </div>
+
+      <div class="console-output-box" id="console-output">
+        <div class="output-placeholder">// Ready. Click "Run Mesh Crawl" to route request through CrawlAI nodes...</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>CRAWLAI PROTOCOL &copy; 2026 • OPEN-SOURCE DEPIN ON SOLANA</span>
+      <div class="footer-links">
+        <a href="https://github.com/Synxneuos/crawlai" target="_blank">GitHub</a>
+        <a href="/v1/stats" target="_blank">API Specs</a>
+        <a href="#">Whitepaper</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
